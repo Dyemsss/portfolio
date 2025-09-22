@@ -1,7 +1,6 @@
-/* ======================================
+/* ==============================
    Variables
-   ====================================== */
-
+   ============================== */
 :root {
   /* Colors */
   --cadet-blue-crayola: hsl(240, 10%, 70%);
@@ -54,21 +53,19 @@
   --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
 }
 
-
-/* ======================================
-   Global / Reset Styles
-   ====================================== */
-
+/* ==============================
+   Reset / Base
+   ============================== */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  font-size: 100%; /* 16px default */
+  font-size: 100%; /* ~16px */
   scroll-behavior: smooth;
 }
 
@@ -77,163 +74,18 @@ body {
   color: var(--independence);
   background-color: var(--white);
   line-height: 1.6;
-  transition: background-color var(--transition-2), color var(--transition-2);
+  -webkit-font-smoothing: antialiased;
 }
 
-
-/* ======================================
-   Typography Helpers
-   ====================================== */
-
-h1, .heading-1 {
-  font-size: var(--fs-1);
-  font-weight: var(--fw-700);
-  color: var(--space-cadet);
+/* ==============================
+   Common Utilities
+   ============================== */
+.container {
+  width: 90vw;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-h2, .heading-2 {
-  font-size: var(--fs-2);
-  font-weight: var(--fw-700);
-  color: var(--klein-blue);
-}
-
-h3, .heading-3 {
-  font-size: var(--fs-3);
-  font-weight: var(--fw-600);
-  color: var(--vivid-sky-blue);
-}
-
-p {
-  font-size: var(--fs-6);
-  margin-bottom: 1em;
-}
-
-a {
-  text-decoration: none;
-  color: var(--vivid-sky-blue);
-  transition: color var(--transition-1);
-}
-
-a:hover {
-  color: var(--gold-web-golden);
-}
-
-
-/* ======================================
-   Layout / Sections
-   ====================================== */
-
-.section {
-  padding: var(--section-padding) 20px;
-}
-
-.header {
-  background-color: var(--midnight-blue);
-  color: var(--white);
-  padding: var(--section-padding) 20px;
-  text-align: center;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.navbar a {
-  color: var(--white);
-  font-weight: var(--fw-600);
-}
-
-.navbar a:hover {
-  color: var(--minion-yellow);
-}
-
-.hero {
-  background-color: var(--vivid-sky-blue);
-  color: var(--space-cadet);
-  padding: var(--section-padding) 20px;
-  text-align: center;
-}
-
-.hero .btn {
-  background-color: var(--gold-web-golden);
-  color: var(--space-cadet);
-  padding: 0.75em 1.5em;
-  border: none;
-  border-radius: var(--radius-10);
-  font-family: var(--ff-poppins);
-  font-weight: var(--fw-700);
-  cursor: pointer;
-  transition: transform var(--transition-2), background-color var(--transition-1);
-}
-
-.hero .btn:hover {
-  background-color: var(--minion-yellow);
-  transform: scale(1.05);
-}
-
-
-/* ======================================
-   Cards / Portfolio Items
-   ====================================== */
-
-.card {
-  background-color: var(--white);
-  border-radius: var(--radius-10);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: transform var(--transition-1), box-shadow var(--transition-2);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px var(--manatee);
-}
-
-.card img {
-  width: 100%;
-  display: block;
-}
-
-.card-content {
-  padding: 20px;
-}
-
-.card-content h3 {
-  font-size: var(--fs-4);
-  margin-bottom: 0.5em;
-  color: var(--space-cadet);
-}
-
-.card-content p {
-  font-size: var(--fs-6);
-  color: var(--independence);
-}
-
-
-/* ======================================
-   Footer
-   ====================================== */
-
-.footer {
-  background-color: var(--space-cadet);
-  color: var(--white);
-  text-align: center;
-  padding: var(--section-padding) 20px;
-}
-
-.footer a {
-  color: var(--vivid-sky-blue);
-}
-
-.footer a:hover {
-  color: var(--gold-web-golden);
-}
-
-/* ======================================
-   Utility Classes
-   ====================================== */
 
 .text-center {
   text-align: center;
@@ -245,4 +97,258 @@ a:hover {
 .pb-1 { padding-bottom: 1rem; }
 
 .hidden { display: none; }
-.visible { display: block; } 
+
+/* ==============================
+   Header / Navigation
+   ============================== */
+header {
+  background: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  color: var(--space-cadet);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: var(--ff-open-sans);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  color: var(--independence);
+  transition: color var(--transition-1);
+}
+
+.nav-links a:hover {
+  color: var(--vivid-sky-blue);
+}
+
+/* ==============================
+   Hero Section
+   ============================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background: var(--vivid-sky-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 0 var(--section-padding);
+}
+
+.hero .hero-title {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-700);
+  margin-bottom: 1rem;
+}
+
+.hero .hero-subtitle {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  color: var(--cadet-blue-crayola);
+  margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-5);
+  padding: 0.75em 2em;
+  border: none;
+  border-radius: var(--radius-10);
+  background-color: var(--gold-web-golden);
+  color: var(--space-cadet);
+  cursor: pointer;
+  transition: background-color var(--transition-2), transform var(--transition-2);
+}
+
+.hero .btn-primary:hover {
+  background-color: var(--minion-yellow);
+  transform: translateY(-3px);
+}
+
+/* ==============================
+   Sections: About / Services / Portfolio / Contact
+   ==============================
+   Following patterns from the example:
+   - alternating backgrounds (white / light color)
+   - center headings
+   - two-column layouts
+   ============================== */
+
+section {
+  padding: var(--section-padding) 0;
+}
+
+section:nth-child(even) {
+  background-color: var(--cadet-blue-crayola);
+}
+
+.section-heading {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-700);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--space-cadet);
+}
+
+.about .about-content,
+.services .service-list,
+.portfolio .portfolio-grid,
+.contact .contact-form {
+  display: grid;
+  gap: 2rem;
+}
+
+.about .about-content {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.services .service-list {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.portfolio .portfolio-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.portfolio .portfolio-item {
+  background: var(--white);
+  border-radius: var(--radius-10);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition-2);
+}
+
+.portfolio .portfolio-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio .portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact .contact-form {
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact .contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact .contact-form input,
+.contact .contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--independence);
+  border-radius: var(--radius-5);
+  font-size: var(--fs-6);
+  font-family: var(--ff-open-sans);
+}
+
+.contact .contact-form button {
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-5);
+  padding: 0.75em 1.5em;
+  background-color: var(--gold-web-golden);
+  color: var(--space-cadet);
+  border: none;
+  border-radius: var(--radius-10);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color var(--transition-2), transform var(--transition-1);
+}
+
+.contact .contact-form button:hover {
+  background-color: var(--minion-yellow);
+  transform: scale(1.05);
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  background-color: var(--space-cadet);
+  color: var(--cadet-blue-crayola);
+  text-align: center;
+  padding: var(--section-padding) 0;
+}
+
+footer p {
+  font-size: var(--fs-6);
+}
+
+footer a {
+  color: var(--vivid-sky-blue);
+}
+
+footer a:hover {
+  color: var(--gold-web-golden);
+}
+
+/* ==============================
+   Responsive Media Queries
+   ============================== */
+@media (max-width: 1200px) {
+  .about .about-content,
+  .contact .contact-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  /* maybe show mobile nav toggle */}
+  
+  .hero .hero-title {
+    font-size: var(--fs-2);
+  }
+  .hero .hero-subtitle {
+    font-size: var(--fs-4);
+  }
+
+  .portfolio .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--section-padding) 1rem;
+  }
+  .contact .contact-form {
+    gap: 1.5rem;
+  }
+}
