@@ -1,0 +1,272 @@
+/* -------------------
+   VARIABLES
+   ------------------- */
+   :root {
+     --cadet-blue-crayola: hsl(240, 10%, 70%);
+       --gold-web-golden: hsl(50, 100%, 54%);
+         --vivid-sky-blue: hsl(196, 84%, 63%);
+           --midnight-blue: hsl(231, 83%, 25%);
+             --minion-yellow: hsl(50, 100%, 50%);
+               --rich-black-fogra-29: hsl(210, 26%, 7%);
+                 --oxford-blue: hsl(222, 44%, 13%);
+                   --cultured: hsl(0, 0%, 98%);
+                     --white: hsl(0, 0%, 100%);
+                       --gray: hsl(0, 0%, 50%);
+                         --transition: 0.3s ease-in-out;
+                           --shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+                           }
+
+                           /* RESET */
+                           *,
+                           *::before,
+                           *::after {
+                             margin: 0;
+                               padding: 0;
+                                 box-sizing: border-box;
+                                 }
+
+                                 html { scroll-behavior: smooth; }
+
+                                 body {
+                                   font-family: "Open Sans", sans-serif;
+                                     line-height: 1.7;
+                                       color: var(--cadet-blue-crayola);
+                                         background-color: var(--rich-black-fogra-29);
+                                         }
+
+                                         img, ion-icon { display: block; max-width: 100%; }
+                                         a { text-decoration: none; color: inherit; }
+                                         ul { list-style: none; }
+
+                                         /* CONTAINER */
+                                         .container {
+                                           width: 90%;
+                                             max-width: 1200px;
+                                               margin: 0 auto;
+                                               }
+
+                                               /* HEADER */
+                                               .header {
+                                                 position: fixed;
+                                                   top: 0; left: 0;
+                                                     width: 100%;
+                                                       background: var(--oxford-blue);
+                                                         padding: 1rem 0;
+                                                           box-shadow: var(--shadow);
+                                                             z-index: 1000;
+                                                             }
+
+                                                             .logo {
+                                                               font-family: "Barlow", sans-serif;
+                                                                 font-size: 1.5rem;
+                                                                   font-weight: 700;
+                                                                     color: var(--white);
+                                                                     }
+
+                                                                     .navbar {
+                                                                       display: flex;
+                                                                         justify-content: flex-end;
+                                                                           align-items: center;
+                                                                           }
+
+                                                                           .navbar-list { display: flex; gap: 2rem; }
+
+                                                                           .navbar-link {
+                                                                             color: var(--cadet-blue-crayola);
+                                                                               font-weight: 600;
+                                                                                 transition: var(--transition);
+                                                                                 }
+
+                                                                                 .navbar-link:hover { color: var(--vivid-sky-blue); }
+
+                                                                                 .btn {
+                                                                                   padding: 0.6rem 1.4rem;
+                                                                                     border-radius: 8px;
+                                                                                       border: none;
+                                                                                         font-weight: 600;
+                                                                                           cursor: pointer;
+                                                                                             transition: var(--transition);
+                                                                                             }
+
+                                                                                             .btn-primary {
+                                                                                               background: var(--gold-web-golden);
+                                                                                                 color: var(--rich-black-fogra-29);
+                                                                                                 }
+                                                                                                 .btn-primary:hover { background: var(--minion-yellow); }
+
+                                                                                                 .blue { background: var(--vivid-sky-blue); color: var(--white); }
+                                                                                                 .blue:hover { opacity: 0.9; }
+
+                                                                                                 /* HERO */
+                                                                                                 .hero {
+                                                                                                   padding: 10rem 0 6rem;
+                                                                                                     display: flex;
+                                                                                                       align-items: center;
+                                                                                                       }
+                                                                                                       .hero-banner { position: relative; flex: 1; }
+                                                                                                       .hero-banner .img-cover { border-radius: 16px; box-shadow: var(--shadow); }
+                                                                                                       .hero-content { flex: 1; padding-left: 2rem; }
+                                                                                                       .hero-title {
+                                                                                                         font-size: 2.5rem;
+                                                                                                           font-weight: 700;
+                                                                                                             color: var(--white);
+                                                                                                               margin-bottom: 1rem;
+                                                                                                               }
+                                                                                                               .hero-text { margin-bottom: 2rem; color: var(--cadet-blue-crayola); }
+
+                                                                                                               /* SECTION */
+                                                                                                               .section { padding: 6rem 0; }
+                                                                                                               .section-title {
+                                                                                                                 font-size: 2rem;
+                                                                                                                   color: var(--white);
+                                                                                                                     margin-bottom: 1.5rem;
+                                                                                                                     }
+                                                                                                                     .section-subtitle { color: var(--vivid-sky-blue); margin-bottom: 0.5rem; }
+                                                                                                                     .section-text { color: var(--cadet-blue-crayola); margin-bottom: 1rem; }
+
+                                                                                                                     /* PORTFOLIO */
+                                                                                                                     .portfolio-list {
+                                                                                                                       display: grid;
+                                                                                                                         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                                                                                                           gap: 1.5rem;
+                                                                                                                           }
+                                                                                                                           .portfolio-card {
+                                                                                                                             display: block;
+                                                                                                                               height: 220px;
+                                                                                                                                 background-size: cover;
+                                                                                                                                   background-position: center;
+                                                                                                                                     border-radius: 12px;
+                                                                                                                                       overflow: hidden;
+                                                                                                                                         position: relative;
+                                                                                                                                           box-shadow: var(--shadow);
+                                                                                                                                             transition: var(--transition);
+                                                                                                                                             }
+                                                                                                                                             .portfolio-card:hover { transform: translateY(-6px); }
+                                                                                                                                             .portfolio-card .card-content {
+                                                                                                                                               position: absolute;
+                                                                                                                                                 bottom: 0; left: 0;
+                                                                                                                                                   width: 100%;
+                                                                                                                                                     padding: 1rem;
+                                                                                                                                                       background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+                                                                                                                                                         color: var(--white);
+                                                                                                                                                         }
+
+                                                                                                                                                         /* SKILLS */
+                                                                                                                                                         .skills-list { display: grid; gap: 1rem; margin-top: 2rem; }
+                                                                                                                                                         .skills-item {
+                                                                                                                                                           background: var(--oxford-blue);
+                                                                                                                                                             padding: 1rem;
+                                                                                                                                                               border-radius: 8px;
+                                                                                                                                                                 box-shadow: var(--shadow);
+                                                                                                                                                                 }
+                                                                                                                                                                 .skills-title { font-weight: 600; color: var(--white); }
+                                                                                                                                                                 .skills-progress-box {
+                                                                                                                                                                   background: var(--rich-black-fogra-29);
+                                                                                                                                                                     border-radius: 6px;
+                                                                                                                                                                       overflow: hidden;
+                                                                                                                                                                         margin-top: 0.5rem;
+                                                                                                                                                                         }
+                                                                                                                                                                         .skills-progress { height: 8px; background: var(--vivid-sky-blue); }
+
+                                                                                                                                                                         /* CONTACT */
+                                                                                                                                                                         .contact-card {
+                                                                                                                                                                           background: var(--oxford-blue);
+                                                                                                                                                                             padding: 2rem;
+                                                                                                                                                                               border-radius: 12px;
+                                                                                                                                                                                 box-shadow: var(--shadow);
+                                                                                                                                                                                 }
+                                                                                                                                                                                 .contact-input {
+                                                                                                                                                                                   width: 100%;
+                                                                                                                                                                                     padding: 0.8rem;
+                                                                                                                                                                                       margin-bottom: 1rem;
+                                                                                                                                                                                         border-radius: 6px;
+                                                                                                                                                                                           border: none;
+                                                                                                                                                                                             outline: none;
+                                                                                                                                                                                             }
+                                                                                                                                                                                             .btn-submit {
+                                                                                                                                                                                               width: 100%;
+                                                                                                                                                                                                 padding: 0.8rem;
+                                                                                                                                                                                                   background: var(--gold-web-golden);
+                                                                                                                                                                                                     border: none;
+                                                                                                                                                                                                       border-radius: 6px;
+                                                                                                                                                                                                         font-weight: 600;
+                                                                                                                                                                                                           cursor: pointer;
+                                                                                                                                                                                                             transition: var(--transition);
+                                                                                                                                                                                                             }
+                                                                                                                                                                                                             .btn-submit:hover { background: var(--minion-yellow); }
+
+                                                                                                                                                                                                             /* FOOTER */
+                                                                                                                                                                                                             .footer {
+                                                                                                                                                                                                               padding: 2rem 0;
+                                                                                                                                                                                                                 background: var(--oxford-blue);
+                                                                                                                                                                                                                   text-align: center;
+                                                                                                                                                                                                                   }
+                                                                                                                                                                                                                   .footer-link {
+                                                                                                                                                                                                                     margin: 0 0.8rem;
+                                                                                                                                                                                                                       color: var(--cadet-blue-crayola);
+                                                                                                                                                                                                                         transition: var(--transition);
+                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                         .footer-link:hover { color: var(--vivid-sky-blue); }
+
+                                                                                                                                                                                                                         /* BACK TO TOP */
+                                                                                                                                                                                                                         .back-to-top {
+                                                                                                                                                                                                                           position: fixed;
+                                                                                                                                                                                                                             bottom: 2rem; right: 2rem;
+                                                                                                                                                                                                                               padding: 0.8rem 1rem;
+                                                                                                                                                                                                                                 background: var(--vivid-sky-blue);
+                                                                                                                                                                                                                                   color: var(--white);
+                                                                                                                                                                                                                                     border-radius: 6px;
+                                                                                                                                                                                                                                       font-weight: 600;
+                                                                                                                                                                                                                                         box-shadow: var(--shadow);
+                                                                                                                                                                                                                                           display: none;
+                                                                                                                                                                                                                                             transition: var(--transition);
+                                                                                                                                                                                                                                             }
+                                                                                                                                                                                                                                             .back-to-top:hover { opacity: 0.9; }
+                                                                                                                                                                                                                                             .back-to-top.active { display: block; }
+
+                                                                                                                                                                                                                                             /* NAVBAR TOGGLE */
+                                                                                                                                                                                                                                             .nav-toggle-btn { display: none; }
+                                                                                                                                                                                                                                             .nav-toggle-btn ion-icon {
+                                                                                                                                                                                                                                               font-size: 2rem;
+                                                                                                                                                                                                                                                 color: var(--white);
+                                                                                                                                                                                                                                                   transition: var(--transition);
+                                                                                                                                                                                                                                                   }
+                                                                                                                                                                                                                                                   .nav-toggle-btn .close-icon { display: none; }
+                                                                                                                                                                                                                                                   .nav-toggle-btn.active .menu-icon { display: none; }
+                                                                                                                                                                                                                                                   .nav-toggle-btn.active .close-icon { display: block; }
+
+                                                                                                                                                                                                                                                   /* RESPONSIVE */
+                                                                                                                                                                                                                                                   @media (max-width: 992px) {
+                                                                                                                                                                                                                                                     .navbar {
+                                                                                                                                                                                                                                                         position: fixed;
+                                                                                                                                                                                                                                                             top: 0; right: -100%;
+                                                                                                                                                                                                                                                                 height: 100vh;
+                                                                                                                                                                                                                                                                     width: 260px;
+                                                                                                                                                                                                                                                                         flex-direction: column;
+                                                                                                                                                                                                                                                                             align-items: flex-start;
+                                                                                                                                                                                                                                                                                 justify-content: flex-start;
+                                                                                                                                                                                                                                                                                     padding: 6rem 2rem 2rem;
+                                                                                                                                                                                                                                                                                         background: var(--oxford-blue);
+                                                                                                                                                                                                                                                                                             box-shadow: var(--shadow);
+                                                                                                                                                                                                                                                                                                 transition: right 0.4s ease;
+                                                                                                                                                                                                                                                                                                     z-index: 999;
+                                                                                                                                                                                                                                                                                                       }
+                                                                                                                                                                                                                                                                                                         .navbar.active { right: 0; }
+                                                                                                                                                                                                                                                                                                           .navbar-list { flex-direction: column; gap: 1.5rem; }
+                                                                                                                                                                                                                                                                                                             .hero { flex-direction: column; text-align: center; }
+                                                                                                                                                                                                                                                                                                               .hero-content { padding-left: 0; margin-top: 2rem; }
+                                                                                                                                                                                                                                                                                                               }
+                                                                                                                                                                                                                                                                                                               @media (max-width: 768px) {
+                                                                                                                                                                                                                                                                                                                 .hero-title { font-size: 2rem; }
+                                                                                                                                                                                                                                                                                                                   .section-title { font-size: 1.6rem; }
+                                                                                                                                                                                                                                                                                                                     .portfolio-list { grid-template-columns: 1fr; }
+                                                                                                                                                                                                                                                                                                                       .skills-list { grid-template-columns: 1fr; }
+                                                                                                                                                                                                                                                                                                                         .contact-card { padding: 1.5rem; }
+                                                                                                                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                                                                                                                         @media (max-width: 480px) {
+                                                                                                                                                                                                                                                                                                                           body { font-size: 0.9rem; }
+                                                                                                                                                                                                                                                                                                                             .logo { font-size: 1.2rem; }
+                                                                                                                                                                                                                                                                                                                               .btn, .btn-submit { font-size: 0.85rem; padding: 0.6rem 1rem; }
+                                                                                                                                                                                                                                                                                                                                 .hero-title { font-size: 1.6rem; }
+                                                                                                                                                                                                                                                                                                                                   .section { padding: 4rem 0; }
+                                                                                                                                                                                                                                                                                                                                   }
